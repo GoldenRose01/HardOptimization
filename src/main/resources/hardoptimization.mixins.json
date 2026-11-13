@@ -11,6 +11,8 @@
 		"world.ShapesMixin",
 		"world.ChunkMapMixin",
 		"entity.EntityGetterMixin",
+		"entity.LivingEntityMixin",
+		"entity.HopperBlockEntityMixin",
 		"network.CompressionEncoderMixin"
 	],
 	"injectors": {

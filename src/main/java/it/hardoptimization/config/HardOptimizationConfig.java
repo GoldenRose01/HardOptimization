@@ -24,6 +24,8 @@ public final class HardOptimizationConfig {
 	public boolean enableChunkLookupCache = true;
 	public boolean enableShapesFastPath = true;
 	public boolean enableEntityCollisionFastPath = true;
+	public boolean enableEntityPushFastPath = true;
+	public boolean enableHopperFastPath = true;
 	public boolean enableChunkSaveThrottling = true;
 	public boolean enableNetworkBufferOptimization = true;
 	public boolean yieldToConflictingMods = true;

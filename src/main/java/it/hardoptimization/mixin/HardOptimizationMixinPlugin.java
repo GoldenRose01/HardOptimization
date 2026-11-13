@@ -36,6 +36,12 @@ public class HardOptimizationMixinPlugin implements IMixinConfigPlugin {
 		if (mixinClassName.endsWith("EntityGetterMixin")) {
 			return ModCompat.shouldApplyModule("EntityCollisionFastPath", cfg.enableEntityCollisionFastPath, "lithium");
 		}
+		if (mixinClassName.endsWith("LivingEntityMixin")) {
+			return ModCompat.shouldApplyModule("EntityPushFastPath", cfg.enableEntityPushFastPath, "lithium");
+		}
+		if (mixinClassName.endsWith("HopperBlockEntityMixin")) {
+			return ModCompat.shouldApplyModule("HopperFastPath", cfg.enableHopperFastPath, "lithium");
+		}
 		if (mixinClassName.endsWith("ChunkMapMixin")) {
 			return ModCompat.shouldApplyModule("ChunkSaveThrottling", cfg.enableChunkSaveThrottling, "c2me");
 		}
