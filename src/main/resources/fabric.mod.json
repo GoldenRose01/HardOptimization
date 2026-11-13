@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "hardoptimization",
+	"version": "${version}",
+	"name": "HardOptimization",
+	"description": "High-impact server & memory optimization mod for Minecraft 26.3 Fabric. Preserves 100% vanilla parity and maximum mod compatibility.",
+	"authors": [
+		"GoldenRose01"
+	],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"it.hardoptimization.HardOptimizationMod"
+		]
+	},
+	"mixins": [
+		"hardoptimization.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

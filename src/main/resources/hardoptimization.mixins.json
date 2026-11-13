@@ -1,0 +1,22 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "it.hardoptimization.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"plugin": "it.hardoptimization.mixin.HardOptimizationMixinPlugin",
+	"mixins": [
+		"server.MinecraftServerMixin",
+		"world.LevelChunkAccessor",
+		"world.LevelMixin",
+		"world.ShapesMixin",
+		"world.ChunkMapMixin",
+		"entity.EntityGetterMixin",
+		"network.CompressionEncoderMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
