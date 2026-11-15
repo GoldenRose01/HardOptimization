@@ -3,6 +3,7 @@ package it.hardoptimization.command;
 import com.mojang.brigadier.CommandDispatcher;
 import it.hardoptimization.compat.ModCompat;
 import it.hardoptimization.config.HardOptimizationConfig;
+import it.hardoptimization.nativebridge.NativeBridge;
 import it.hardoptimization.profiler.ServerMetrics;
 import it.hardoptimization.scheduler.BackgroundScheduler;
 import net.minecraft.ChatFormatting;
@@ -66,6 +67,8 @@ public final class HardOptCommand {
 				String.format(" - %s: %s (%s)", state.name(), state.status(), state.reason())
 			).withStyle(color), false);
 		}
+		ChatFormatting nativeColor = NativeBridge.isAvailable() ? ChatFormatting.GREEN : ChatFormatting.YELLOW;
+		source.sendSuccess(() -> Component.literal(" - RustNativeCore: " + NativeBridge.getStatusMessage()).withStyle(nativeColor), false);
 		return 1;
 	}
 

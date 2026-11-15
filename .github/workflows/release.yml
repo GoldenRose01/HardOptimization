@@ -16,6 +16,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build Rust Native Core (linux-x86_64)
+        run: |
+          cargo build --release --manifest-path native-core/Cargo.toml
+          mkdir -p src/main/resources/natives/linux-x86_64
+          cp native-core/target/release/libhardopt_native.so src/main/resources/natives/linux-x86_64/
+
       - name: Setup Java 25
         uses: actions/setup-java@v4
         with:
